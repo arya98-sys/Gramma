@@ -1,2 +1,8 @@
-# Gramma
-Gramma is an AI-powered grammar checking system that analyzes text to detect grammatical errors, spelling mistakes, and stylistic issues. It provides smart suggestions to improve sentence clarity, readability, and overall writing quality.
+# Gramma AI - Intelligent Writing Assistant
+
+An AI-powered grammar correction tool built with a **Linux-first** philosophy.
+
+## Tech Stack
+- **Backend:** Python, FastAPI, Hugging Face (T5-Base Transformer)
+- **Frontend:** React.js, Tailwind CSS
+- **Environment:** Developed and optimized for Linux/Ubuntu
