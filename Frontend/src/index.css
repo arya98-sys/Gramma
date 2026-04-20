@@ -1,0 +1,35 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    /* Dark Silk Gradient */
+    background: radial-gradient(circle at top right, #1a1c2c, #0d0e14);
+    @apply antialiased text-slate-300 min-h-screen selection:bg-blue-500/30;
+  }
+
+  /* Custom Scrollbar for Silk feel */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #0d0e14;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #2d314d;
+    border-radius: 10px;
+  }
+}
+
+/* Silk Glass Effect */
+.silk-card {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+}
+
+.glow-text {
+  text-shadow: 0 0 20px rgba(59, 130, 246, 0.5);
+}
