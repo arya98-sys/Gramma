@@ -10,7 +10,7 @@ function App() {
     if (!input || input.length < 3) return;
     setLoading(true);
     try {
-      const response = await axios.post('http://localhost:8000/correct', { text: input });
+      const response = await axios.post('https://arya98-gramma.hf.space', { text: input });
       setOutput(response.data.corrected);
     } catch (error) {
       console.error("Backend Error");
