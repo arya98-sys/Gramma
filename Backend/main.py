@@ -16,7 +16,7 @@ app.add_middleware(
 
 # Load the AI model (This may take a minute on first run)
 print("Loading AI Model...")
-happy_tt = HappyTextToText("T5", "vennify/t5-small-grammar-correction")
+happy_tt = HappyTextToText("T5", "vennify/t5-large-grammar-correction")
 settings = TTSettings(num_beams=5, min_length=1)
 
 class TextRequest(BaseModel):
