@@ -12,8 +12,8 @@ A professional, dark-themed grammar correction suite powered by **T5-Base Transf
 ---
 
 ## 👥 The Team
-* **Hemendra Saraswat** – DevOps & Project Lead
-* **Arya Mishra & Abhinav Pal** – Backend & AI Integration
+* **Arya Mishra** – DevOps & Project Lead
+* **Hemendra Saraswat & Abhinav Pal** – Backend & AI Integration
 * **Ayush Rastogi & Deepanshu Lamba** – Frontend & UI/UX Design
 
 ---
