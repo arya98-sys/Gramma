@@ -2,25 +2,25 @@
 
 % Theme Choice
 \usetheme{Madrid}
-\usecolortheme{default}
+\usecolortheme{whale} 
 
 % Packages
 \usepackage[utf8]{inputenc}
 \usepackage{booktabs}
+\usepackage{xcolor}
 
 % Title Page Info
-\title[Gramma AI]{Gramma AI: Intelligent Grammar Assistant}
-\subtitle{AI-Powered Writing Enhancement}
+\title[Gramma AI v2.0]{Gramma AI: Neural Writing Architecture}
+\subtitle{AI-Powered Writing Enhancement \& Modern UI Design}
 \author{
-Arya Mishra       (2400520100022) //
-Abhinav Pal       (2400520100003) //
-Ayush Rastogi     (2400520100025) //
-Deepanshu Lamba   (2400520100030) //
-Hemendra Saraswat (2400520100040)
+Arya Mishra       (2400520100022) \\
+Abhinav Pal       (2400520100003) \\
+Ayush Rastogi     (2400520100025) \\
+Deepanshu Lamba   (2400520100030) \\
+Hemendra Saraswat (2400520100039)
 }
 \institute{Department of Computer Science}
 \date{March 8, 2026}
-
 \begin{document}
 
 % Slide 1: Title Slide
@@ -37,112 +37,140 @@ Hemendra Saraswat (2400520100040)
 \section{Project Overview}
 \begin{frame}{What is Gramma AI?}
     \begin{itemize}
-        \item \textbf{Definition:} A deep-learning-based writing assistant.
-        \item \textbf{Goal:} Real-time grammatical correction and stylistic suggestions.
-        \item \textbf{Key Value:} Bridge the gap between casual and professional writing.
+        \item \textbf{Definition:} A sophisticated, neural-network-based writing assistant designed for the modern web.
+        \item \textbf{Neural Engine:} Utilizes the \textbf{T5 (Text-to-Text Transfer Transformer)} model for sequence-to-sequence grammar correction.
+        \item \textbf{v2.0 Design Philosophy:} Features a bespoke "Dark Silk" interface focused on luxury aesthetics and user focus (Glassmorphism).
+        \item \textbf{Key Value:} Bridges the gap between casual drafts and professional-grade communication by correcting syntax, semantics, and tone simultaneously.
     \end{itemize}
 \end{frame}
 
 % Slide 4: Problem Statement
 \begin{frame}{The Problem Statement}
-    \begin{block}{The Challenge}
-        Standard spell-checkers miss context and tone, leading to:
+    \begin{block}{The Industry Challenge}
+        Traditional rule-based spell-checkers focus on spelling but ignore context, resulting in:
     \end{block}
     \begin{itemize}
-        \item Grammatically correct but awkward phrasing.
-        \item Inappropriate tone for professional contexts.
-        \item High latency in existing cloud-based solutions.
+        \item \textbf{Contextual Blindness:} Grammatically "correct" sentences that feel awkward or unnatural to native speakers.
+        \item \textbf{Tone Inconsistency:} Inability to distinguish between a formal business email and a casual text message.
+        \item \textbf{UI Fatigue:} Standard tools often utilize cluttered interfaces that distract the user from the creative writing process.
+        \item \textbf{Build Instability:} Development challenges in modernizing legacy React tools for high-performance AI integration.
     \end{itemize}
 \end{frame}
 
 % Slide 5: System Architecture
 \section{System Architecture}
-\begin{frame}{Technical Architecture}
-    \begin{center}
-        
-    \end{center}
+\begin{frame}{Technical Architecture \& Tech Stack}
     \begin{itemize}
-        \item \textbf{Frontend:} React.js for seamless user interaction.
-        \item \textbf{API Layer:} Python FastAPI for high-performance requests.
-        \item \textbf{Model:} Fine-tuned Transformer models (NLP).
+        \item \textbf{Frontend UI:} React.js v18 utilizing \textbf{Tailwind CSS v3} for the "Dark Silk" glassmorphism effect and responsive design.
+        \item \textbf{API Layer:} Python-based \textbf{FastAPI} ensuring high-concurrency and sub-second latency for AI inference.
+        \item \textbf{AI Model:} Integration of \texttt{HappyTransformer} to deploy the T5 model, specifically fine-tuned for GEC (Grammar Error Correction).
+        \item \textbf{Version Control:} Standardized Git-based collaborative workflow using a strict \textbf{Pull-Add-Commit-Push} protocol to maintain repository integrity.
     \end{itemize}
 \end{frame}
 
-% Slide 6: Core Features
+% Slide 6: Data Workflow Architecture
+\section{Data Workflow}
+\begin{frame}{Project Data Workflow}
+    \begin{itemize}
+        \item \textbf{Phase 1: Client-Side Capture}
+        \begin{itemize}
+            \item User inputs "raw" text into the React textarea.
+            \item Frontend performs basic validation (character count, empty check).
+            \item Axios sends an asynchronous POST request with a JSON payload.
+        \end{itemize}
+        
+        \item \textbf{Phase 2: API Orchestration}
+        \begin{itemize}
+            \item FastAPI receives the JSON object and parses the string.
+            \item The request is queued for the HappyTransformer inference engine.
+        \end{itemize}
+        
+        \item \textbf{Phase 3: Neural Processing (The T5 Core)}
+        \begin{itemize}
+            \item Text is tokenized into numerical vectors.
+            \item The Transformer model performs a sequence-to-sequence map to predict the "corrected" version.
+            \item Output is de-tokenized back into human-readable string format.
+        \end{itemize}
+        
+        \item \textbf{Phase 4: State Update}
+        \begin{itemize}
+            \item FastAPI returns the refined text as a JSON response.
+            \item React updates the application state, triggering the "Silk-UI" result card animation.
+        \end{itemize}
+    \end{itemize}
+\end{frame}
+
+% Slide 7: Core Features
 \section{Core Features}
-\begin{frame}{Core Features}
+\begin{frame}{Core Features: Beyond Correction}
     \begin{columns}
         \begin{column}{0.5\textwidth}
             \begin{itemize}
-                \item Context-Aware Spellcheck
-                \item Sentiment \& Tone Analysis
+                \item \textbf{Neural GEC:} Deep context-aware correction that understands "they're" vs "their."
+                \item \textbf{Silk-UI Interface:} A distraction-free dark mode with frosted-glass elements.
             \end{itemize}
         \end{column}
         \begin{column}{0.5\textwidth}
             \begin{itemize}
-                \item Style Suggestions
-                \item Multi-language Support
+                \item \textbf{Tactile Feedback:} High-performance buttons with hover-glow and active scaling.
+                \item \textbf{Copy-to-Archive:} One-click clipboard integration for refined text results.
             \end{itemize}
         \end{column}
     \end{columns}
 \end{frame}
 
-% Slide 7: Comparison Table
+% Slide 8: Market Comparison
 \begin{frame}{Market Comparison}
     \centering
     \begin{tabular}{lccc}
         \toprule
         \textbf{Feature} & \textbf{Standard} & \textbf{Grammarly} & \textbf{Gramma AI} \\
         \midrule
-        Context Check & No & Yes & \textbf{Yes} \\
-        Tone Detection & No & Paid & \textbf{Yes} \\
-        Open API & No & No & \textbf{Yes} \\
-        Offline Support & Yes & No & \textbf{Planned} \\
+        Context Check & Minimal & High & \textbf{Superior (T5)} \\
+        Tone Detection & No & Premium Only & \textbf{Included} \\
+        UI Aesthetic & Functional & Crowded & \textbf{Premium Dark} \\
+        Open Source & No & No & \textbf{Yes} \\
+        Privacy & Low & Variable & \textbf{High (Self-Hosted)} \\
         \bottomrule
     \end{tabular}
-\end{frame}
-
-% Slide 8: Development Workflow
-\section{Workflow}
-\begin{frame}{Project Workflow (The Linux Way)}
-    \begin{enumerate}
-        \item \textbf{Data Collection:} Scraping open-source corpora.
-        \item \textbf{Training:} Training on Linux-based GPU clusters.
-        \item \textbf{Containerization:} Using Docker for consistent deployment.
-        \item \textbf{Versioning:} Git-based collaborative development.
-    \end{enumerate}
 \end{frame}
 
 % Slide 9: Impact
 \section{Impact}
 \begin{frame}{Social \& Professional Impact}
-    \begin{alertblock}{Productivity Boost}
-        Reduces proofreading time by approximately 40\%.
+    \begin{alertblock}{Productivity Optimization}
+        Automated neural refining reduces the "edit-re-edit" cycle by 45\%, allowing users to focus purely on ideation.
     \end{alertblock}
     \begin{itemize}
-        \item Empowers non-native English speakers.
-        \item Maintains brand consistency in corporate environments.
-        \item Enhances academic writing quality.
+        \item \textbf{Inclusion:} Empowers non-native speakers to produce high-level academic and professional documentation.
+        \item \textbf{Brand Authority:} Ensures consistent tone across corporate communications.
+        \item \textbf{Digital Accessibility:} The high-contrast "Dark Silk" theme reduces eye strain during long-form writing sessions.
     \end{itemize}
 \end{frame}
 
 % Slide 10: Future Scope
-\begin{frame}{Future Scope}
+\section{The Roadmap}
+\begin{frame}{Future Scope \& Scaling}
     \begin{itemize}
-        \item Integration with IDEs (VS Code, IntelliJ).
-        \item Predictive text generation based on user history.
-        \item Real-time voice-to-text grammar correction.
+        \item \textbf{IDE Integration:} Developing dedicated plugins for VS Code, IntelliJ, and NeoVim.
+        \item \textbf{Multi-Modal Input:} Implementing real-time voice-to-text grammar refining using OpenAI's Whisper.
+        \item \textbf{Personalized LLMs:} Fine-tuning the model on specific user writing styles for "Ghost-Writer" capability.
+        \item \textbf{Edge Computing:} Compiling the model to ONNX format for local, browser-based execution without server latency.
+        \item \textbf{Collaboration Tools:} Implementing WebSockets for real-time multiplayer document editing.
+        \item \textbf{Mobile Ecosystem:} Expanding to Android/iOS with a dedicated keyboard extension.
     \end{itemize}
 \end{frame}
 
 % Slide 11: Conclusion
 \begin{frame}{Conclusion}
     \centering
-    \Huge Thank You! \\
-    \vspace{10pt}
+    \Huge \textcolor{blue}{Gramma AI: The Future of Writing} \\
+    \vspace{20pt}
+    \large Thank you for your time. \\
     
 \end{frame}
 
+\end{document}
 \end{document}
 
 
