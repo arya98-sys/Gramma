@@ -2,7 +2,7 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 from happytransformer import HappyTextToText, TTSettings
-import threading
+
 
 app = FastAPI()
 
@@ -16,17 +16,7 @@ app.add_middleware(
 
 # Load the AI model (This may take a minute on first run)
 print("Loading AI Model...")
-# happy_tt = HappyTextToText("T5", "vennify/t5-small-grammar-correction")
-happy_tt = None
-
-def load_model():
-    global happy_tt
-    print("Loading AI Model...")
-    happy_tt = HappyTextToText("T5", "vennify/t5-small-grammar-correction")
-    print("Model loaded!")
-
-threading.Thread(target=load_model).start()
-
+happy_tt = HappyTextToText("T5", "vennify/t5-small-grammar-correction")
 settings = TTSettings(num_beams=5, min_length=1)
 
 class TextRequest(BaseModel):
