@@ -1,4 +1,4 @@
-## --- Python / Backend ---
+
 venv/
 .venv/
 __pycache__/
@@ -8,7 +8,7 @@ __pycache__/
 db.sqlite3
 /Backend/my_custom_model/
 
-# --- Node.js / Frontend ---
+
 node_modules/
 dist/
 build/
@@ -18,13 +18,12 @@ yarn-debug.log*
 yarn-error.log*
 .eslintcache
 
-# --- OS / IDE Specific ---
 .DS_Store
 Thumbs.db
 .vscode/
 .idea/
 
-# --- Large Files ---
+
 *.safetensors
 *.bin
 *.model
