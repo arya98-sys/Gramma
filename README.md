@@ -12,7 +12,7 @@ A professional, dark-themed grammar correction suite powered by **T5-Base Transf
 The prototype of this ai used the dataset JFLEG, of the vennify/t5 grammar correction model.
 
 JFLEG: A Fluency Corpus and Benchmark for Grammatical Error Correction
-Courtney Napoles, Keisuke Sakaguchi, Joel Tetreault
+By :Courtney Napoles, Keisuke Sakaguchi, Joel Tetreault
 ---
 
 ## 👥 The Team
