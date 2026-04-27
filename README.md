@@ -9,6 +9,9 @@
 
 A professional, dark-themed grammar correction suite powered by **T5-Base Transformers** and a **FastAPI** backend. This project features a high-end "Dark Silk" interface built with **React** and **Tailwind CSS v3**.
 
+The prototype of this ai used the dataset JFLEG, of the vennify/t5 grammar correct model.
+JFLEG: A Fluency Corpus and Benchmark for Grammatical Error Correction
+Courtney Napoles, Keisuke Sakaguchi, Joel Tetreault
 ---
 
 ## 👥 The Team
