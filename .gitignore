@@ -1,11 +1,32 @@
-# Frontend artifacts
-frontend/node_modules/
-frontend/build/
+## --- Python / Backend ---
+venv/
+.venv/
+__pycache__/
+*.py[cod]
+*$py.class
+.env
+db.sqlite3
+/Backend/my_custom_model/
 
-# Backend artifacts
-backend/venv/
-backend/__pycache__/
-backend/.env
+# --- Node.js / Frontend ---
+node_modules/
+dist/
+build/
+.cache/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.eslintcache
 
-# OS files
+# --- OS / IDE Specific ---
 .DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# --- Large Files ---
+*.safetensors
+*.bin
+*.model
+*.pt
+*.h5
