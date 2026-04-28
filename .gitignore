@@ -1,31 +1,32 @@
-
-venv/
-.venv/
-__pycache__/
+# --- Python / Backend ---
+Backend/venv/
+Backend/my_custom_model/
+Backend/__pycache__/
+Backend/tempCoderRunnerFile.py
 *.py[cod]
-*$py.class
 .env
-db.sqlite3
-/Backend/my_custom_model/
 
+# --- Node / Frontend ---
+Frontend/node_modules/
+Frontend/dist/
+Frontend/build/
+Frontend/.cache/
+package-lock.json
+# Note: Keep package.json, but some prefer to ignore lock files in specific setups.
+# Given your structure, keeping the root package-lock.json is standard.
 
-node_modules/
-dist/
-build/
-.cache/
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-.eslintcache
-
-.DS_Store
-Thumbs.db
-.vscode/
-.idea/
-
-
+# --- Large AI Files (Safety Net) ---
 *.safetensors
 *.bin
 *.model
 *.pt
 *.h5
+*.msgpack
+tr.csv
+
+# --- System & IDE ---
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+

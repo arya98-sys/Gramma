@@ -2,3 +2,5 @@ fastapi
 uvicorn
 happytransformer
 torch
+pandas
+scikit-learn
