@@ -1,21 +1,29 @@
-import React, { useState } from 'react';
+import React, { useMemo, useState } from 'react';
 import axios from 'axios';
+
+const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:8000';
+const MAX_CHARACTERS = 5000;
 
 function App() {
   const [input, setInput] = useState('');
   const [output, setOutput] = useState('');
+  const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
+  const wordCount = useMemo(() => input.trim() ? input.trim().split(/\s+/).length : 0, [input]);
 
   const handleCorrect = async () => {
-    if (!input || input.length < 3) return;
+    if (input.trim().length < 3 || loading) return;
     setLoading(true);
+    setError('');
     try {
-      const response = await axios.post('http://localhost:8000/correct', { text: input });
+      const response = await axios.post(`${API_URL}/correct`, { text: input.trim() });
       setOutput(response.data.corrected);
-    } catch (error) {
-      console.error("Backend Error");
+    } catch (requestError) {
+      setOutput('');
+      setError(requestError.response?.data?.detail || 'Unable to reach the grammar service. Check the API deployment and try again.');
+    } finally {
+      setLoading(false);
     }
-    setLoading(false);
   };
 
   return (
@@ -37,11 +45,13 @@ function App() {
             className="w-full h-64 p-8 bg-transparent border-none focus:ring-0 text-xl text-slate-200 placeholder-slate-600 resize-none italic font-light"
             placeholder="Enter text to refine..."
             value={input}
-            onChange={(e) => setInput(e.target.value)}
+            maxLength={MAX_CHARACTERS}
+            onChange={(e) => { setInput(e.target.value); setError(''); }}
+            aria-label="Text to correct"
           />
           <div className="flex items-center justify-between px-8 py-6 border-t border-white/5 bg-white/[0.01]">
             <div className="flex gap-4">
-               <span className="text-xs text-slate-500 font-mono uppercase">{input.split(' ').filter(x => x).length} words</span>
+               <span className="text-xs text-slate-500 font-mono uppercase">{wordCount} words · {input.length}/{MAX_CHARACTERS}</span>
             </div>
             <button
               onClick={handleCorrect}
@@ -53,6 +63,8 @@ function App() {
             </button>
           </div>
         </div>
+
+        {error && <p role="alert" className="rounded-2xl border border-red-400/20 bg-red-400/10 px-5 py-4 text-sm text-red-200">{error}</p>}
 
         {/* AI Output Result */}
         {output && (
